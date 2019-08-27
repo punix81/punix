@@ -1,0 +1,14 @@
+{
+  "Customers": "Kunden",
+  "customer": "Kunde",
+  "Customer Portal": "Kundenportal",
+  "Add": "Hinzufügen",
+  "List": "Liste",
+  "Log out": "Ausloggen",
+  "Sort by": "Sortiere nach",
+  "Search": "Suchen",
+  "DETAILS": "ANGABEN",
+  "EDIT": "BEARBEITEN",
+  "DELETE": "LÖSCHEN",
+  "customer-text": "Die Kunden-ID von {{name}} ist {{id}}. {{firstName}} kommt aus {{country}}"
+}
