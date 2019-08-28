@@ -13,7 +13,4 @@ describe('AppComponent', () => {
       ],
     }).compileComponents();
   }));
-
-  test.todo('be done in the future');
-
 });

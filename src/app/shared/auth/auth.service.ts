@@ -7,9 +7,9 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root'
 })
 export class AuthService {
-  private _IDTOKEN: string;
-  private _ACCESSTOKEN: string;
-  private _EXPIRESAT: number;
+  private _idToken: string;
+  private _accessToken: string;
+  private _expiresAt: number;
 
   auth0 = new auth0.WebAuth({
     clientID: environment.auth0.clientID,
@@ -20,17 +20,17 @@ export class AuthService {
   });
 
   constructor(public router: Router) {
-    this._IDTOKEN = '';
-    this._ACCESSTOKEN = '';
-    this._EXPIRESAT = 0;
+    this._idToken = '';
+    this._accessToken = '';
+    this._expiresAt = 0;
   }
 
   get accessToken(): string {
-    return this._ACCESSTOKEN;
+    return this._accessToken;
   }
 
   get idToken(): string {
-    return this._IDTOKEN;
+    return this._idToken;
   }
 
   public login(): void {
@@ -53,9 +53,9 @@ export class AuthService {
   private localLogin(authResult): void {
     // Set the time that the Access Token will expire at
     const expiresAt = (authResult.expiresIn * 1000) + Date.now();
-    this._ACCESSTOKEN = authResult.accessToken;
-    this._IDTOKEN = authResult.idToken;
-    this._EXPIRESAT = expiresAt;
+    this._accessToken = authResult.accessToken;
+    this._idToken = authResult.idToken;
+    this._expiresAt = expiresAt;
   }
 
   public renewTokens(): void {
@@ -71,9 +71,9 @@ export class AuthService {
 
   public logout(): void {
     // Remove tokens and expiry time
-    this._ACCESSTOKEN = '';
-    this._IDTOKEN = '';
-    this._EXPIRESAT = 0;
+    this._accessToken = '';
+    this._idToken = '';
+    this._expiresAt = 0;
 
     this.auth0.logout({
       returnTo: 'http://localhost:4200/login'
@@ -83,6 +83,6 @@ export class AuthService {
   public isAuthenticated(): boolean {
     // Check whether the current time is past the
     // access token's expiry time
-    return this._ACCESSTOKEN && Date.now() < this._EXPIRESAT;
+    return this._accessToken && Date.now() < this._expiresAt;
   }
 }

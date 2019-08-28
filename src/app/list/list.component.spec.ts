@@ -1,5 +1,6 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Store } from '@ngrx/store';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
 import { By } from '@angular/platform-browser';
@@ -42,7 +43,8 @@ describe('ListComponent', () => {
             useFactory: createTranslateLoader,
             deps: [HttpClient]
           }
-        })
+        }),
+        BrowserAnimationsModule
       ],
       declarations: [ ListComponent ],
       schemas: [NO_ERRORS_SCHEMA],

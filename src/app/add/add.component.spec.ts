@@ -18,7 +18,4 @@ describe('AddComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-
-  test.todo('to be done in the future');
-
 });

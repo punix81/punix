@@ -111,7 +111,7 @@ describe('DetailComponent', () => {
 
   it('should display the country in uppercase', () => {
     const country = fixture.nativeElement
-      .querySelector('p').textContent;
+      .querySelector('p').innerText;
     expect(country).toEqual('SWITZERLAND');
   });
 

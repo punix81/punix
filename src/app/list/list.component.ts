@@ -8,15 +8,33 @@ import { Store } from '@ngrx/store';
 import { State } from '../reducers';
 import { State as CustomersState, initialState } from '../reducers/customers';
 import * as CustomersActions from '../actions/customers';
+import { style, trigger, state, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  styleUrls: ['./list.component.css'],
+  animations: [
+    trigger('highlight', [
+      state('normal', style({
+        backgroundColor: 'rgba(0, 0, 0, 0.02)'
+      })),
+      state('highlighted', style({
+        backgroundColor: 'rgba(0, 0, 200, 0.1)'
+      })),
+      transition('normal => highlighted', [
+        animate('0.5s ease-out')
+      ]),
+      transition('highlighted => normal', [
+        animate('0.5s ease-in')
+      ])
+    ])
+  ]
 })
 export class ListComponent implements OnInit, OnDestroy {
   state: CustomersState = initialState;
   storeSubscription: Subscription;
+  highlightedCountry: string;
 
   constructor(
     private customerService: CustomerService,
@@ -34,6 +52,13 @@ export class ListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.storeSubscription.unsubscribe();
+  }
+
+  highlightCountry(country: string) {
+    if (country === this.highlightedCountry) {
+      country = '';
+    }
+    this.highlightedCountry = country;
   }
 
   getCustomers() {
