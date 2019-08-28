@@ -12,8 +12,8 @@ export const environment = {
 
   // Configure Auth0 credentials
   auth0: {
-    clientID: 'tRJvx17JxMj3JYftKe1QEG5ClytlGkAc',
-    domain: 'dev--0l3o844.auth0.com',
+    clientID: 'p752dE5xgLiPe5BvmTw8mDB1MPhCN4FS',
+    domain: 'dev-punix-eu.auth0.com'
   }
 };
 
