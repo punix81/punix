@@ -1,0 +1,8 @@
+<h4>Delete customer</h4>
+<p>Are you sure you wish to delete {{data.name}}, customer with id #{{data.id}}, from the customer list?</p>
+<button mat-raised-button (click)="close()">
+  Give customer another chance
+</button>
+<button mat-raised-button class="delete-button" (click)="delete()">
+  Delete
+</button>

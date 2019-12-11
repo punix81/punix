@@ -1,0 +1,16 @@
+.active {
+  font-weight: bold;
+  color: blue;
+}
+
+mat-card {
+  margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.02);
+}
+mat-card:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+button {
+  padding: 0px 8px;
+}
