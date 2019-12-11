@@ -9,47 +9,27 @@
     "curly": true,
     "eofline": true,
     "forin": true,
-    "prefer-const": true,
-    "prefer-readonly": true,
     "import-blacklist": [
       true
     ],
     "import-spacing": true,
     "indent": [
       true,
-      "tabs"
+      "spaces"
     ],
     "interface-over-type-literal": true,
     "label-position": true,
     "max-line-length": [
       true,
-      160
+      140
     ],
     "member-access": false,
     "member-ordering": [
       true,
-      {
-        "order": [
-          "public-static-field",
-          "public-instance-field",
-          "protected-static-field",
-          "protected-instance-field",
-          "private-static-field",
-          "private-instance-field",
-          "public-constructor",
-          "protected-constructor",
-          "private-constructor",
-          "public-static-method",
-          "public-instance-method",
-          "protected-static-method",
-          "protected-instance-method",
-          "private-static-method",
-          "private-instance-method"
-        ]
-      }
+      {"order": "instance-sandwich"}
     ],
     "no-arg": true,
-    "no-bitwise": true,
+    "no-bitwise": false,
     "no-console": [
       true,
       "debug",
@@ -77,6 +57,7 @@
     "no-trailing-whitespace": true,
     "no-unnecessary-initializer": true,
     "no-unused-expression": true,
+    "no-use-before-declare": true,
     "no-var-keyword": true,
     "object-literal-sort-keys": false,
     "one-line": [
@@ -119,6 +100,18 @@
       "check-separator",
       "check-type"
     ],
+    "directive-selector": [
+      false,
+      "attribute",
+      "cr",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "cr",
+      "kebab-case"
+    ],
     "no-inputs-metadata-property": true,
     "no-outputs-metadata-property": true,
     "no-host-metadata-property": true,
@@ -126,5 +119,12 @@
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
     "directive-class-suffix": true
+  },
+  "linterOptions": {
+    "exclude": [
+      "./test_helpers/mock-translate-params.pipe.ts",
+      "./test_helpers/mock-translate.pipe.ts",
+      "./test_helpers/mock-translate.service.ts"
+    ]
   }
 }
