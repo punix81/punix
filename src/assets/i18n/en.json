@@ -1,9 +1,0 @@
-{
-  "i18n.application.title": "punixSeed",
-  "i18n.application.description": "Reactive project template for your business web application. Powered by punix and Angular.",
-  "i18n.application.organization.name": "Federal Office of Information Technology, Systems and Telecommunication FOITT",
-  "i18n.routes.home.title": "Home",
-  "i18n.routes.lazy.title": "Lazy",
-  "i18n.routes.home.success": "Your punix app is up and running! :)",
-  "i18n.routes.lazy.text": "This module is lazily loaded, meaning it will only be loaded once the route is activated."
-}

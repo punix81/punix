@@ -1,0 +1,81 @@
+<section id="section-demo" class="home-section">
+
+    <div class="container">
+
+        <div class="section-header" t-p-5 fxLayout="column" fxLayoutAlign="center center" [@animate]="{value:'*',params:{y:'120px',opacity:'0',delay:'100ms', duration: '400ms'}}">
+            <h2>Choose a Demo</h2>
+            <p>Each Page is an Angular Component and located in it's own directory. So it's super easy to customize.</p>
+
+            <button mat-raised-button color="primary" (click)="getPro()">
+                Get Pro $4
+            </button>
+        </div>
+        <div fxLayout="row wrap" class="demo_wrap" fxLayout.lt-md="column">
+            
+            <div fxFlex="33.33" 
+            class="demo-item"
+            *ngFor="let demo of demos; let i = index"
+            [@animate]="{value:'*',params:{y:'120px',opacity:'0',delay: (i + 1)*200+'ms', duration: '400ms'}}">
+                <span class="demo-badge mat-elevation-z3"
+                [ngClass]="{free: demo.badge === 'Free', pro: demo.badge === 'Pro'}">{{demo.badge}}</span>
+                <mat-card matRipple [routerLink]="demo.link" target="_blank">
+                    <mat-card-content class="p-1 m-0">
+                        <h5 class="t-pt-1"> {{demo.name}}</h5>
+                        <img mat-card-image class="m-0" [src]="demo.thumbnail">
+                    </mat-card-content>
+                </mat-card>
+            </div>
+       
+            <!-- <div fxFlex="33.33" [@animate]="{value:'*',params:{y:'120px',opacity:'0',delay:'300ms', duration: '400ms'}}">
+                <mat-card matRipple [routerLink]="'/pages/comingsoon/version2'">
+                    <mat-card-content class="p-1 m-0">
+                        <h5 class="t-pt-1"> Version 2</h5>
+                        <img mat-card-image class="m-0" src="../../../../../assets/images/demo/bluepart.PNG">
+                    </mat-card-content>
+      
+                </mat-card>
+            </div>
+            <div fxFlex="33.33" [@animate]="{value:'*',params:{y:'120px',opacity:'0',delay:'400ms', duration: '400ms'}}">
+                <mat-card matRipple [routerLink]="'/pages/comingsoon/version3'">
+                    <mat-card-content class="p-1 m-0">
+                        <h5 class="t-pt-1"> Version 3</h5>
+                        <img mat-card-image class="m-0" src="../../../../../assets/images/demo/redpart.PNG">
+                    </mat-card-content>
+                    
+                </mat-card>
+            </div> -->
+        </div>
+
+        <div fxLayout="row" class="demo_wrap" fxLayout.lt-md="column" fxLayoutWrap="nowrap" fxLayoutGap="30px">
+           
+            <!-- <div fxFlex="33.33" [@animate]="{value:'*',params:{y:'120px',opacity:'0',delay:'500ms', duration: '400ms'}}">
+
+                <mat-card matRipple [routerLink]="'/pages/comingsoon/version4'" target="_blank">
+                    <mat-card-content class="p-1 m-0">
+                        <h5 class="t-pt-1"> Version 4</h5>
+                    <img mat-card-image class="m-0" src="../../../../../assets/images/demo/purplemain.PNG">
+
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div fxFlex="33.33" [@animate]="{value:'*',params:{y:'120px',opacity:'0',delay:'600ms', duration: '400ms'}}">
+                <mat-card matRipple [routerLink]="'/pages/comingsoon/version5'">
+                    <mat-card-content class="p-1 m-0">
+                        <h5 class="t-pt-1"> Version 5</h5>
+                        <img mat-card-image class="m-0" src="../../../../../assets/images/demo/purplerev.PNG">
+                    </mat-card-content>
+               
+                </mat-card>
+            </div>
+            <div fxFlex="33.33" [@animate]="{value:'*',params:{y:'120px',opacity:'0',delay:'700ms', duration: '400ms'}}">
+                <mat-card matRipple [routerLink]="'/pages/comingsoon/version6'">
+                    <mat-card-content class="p-1 m-0">
+                        <h5 class="t-pt-1"> Version 6</h5>
+                        <img mat-card-image class="m-0" src="../../../../../assets/images/demo/purplepart.PNG">
+                    </mat-card-content>
+                </mat-card>
+            </div> -->
+        </div>
+  
+    </div>
+</section>

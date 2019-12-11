@@ -1,20 +1,10 @@
-import {AfterViewInit, Component} from '@angular/core';
-
+import { Component } from '@angular/core';
 
 @Component({
-	selector: 'app-root',
-	templateUrl: './app.component.html'
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements AfterViewInit {
-	navigation = [
-		{url: 'home', label: 'i18n.routes.home.title'},
-		{url: 'lazy', label: 'i18n.routes.lazy.title'}
-	];
-
-	constructor() {
-	}
-
-	ngAfterViewInit() {
-
-	}
+export class AppComponent {
+  title = 'app';
 }

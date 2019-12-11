@@ -1,0 +1,16 @@
+.comming_top_wrap {
+  color: #fff;
+  padding: 10rem 0 20rem 0;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background: linear-gradient(to top right, rgba(136, 211, 206, 0.98) 0%, rgba(110, 69, 226, 0.98) 100%), url('../../../../../assets/images/bg/partition/background.jpg');
+  background-size: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+@media only screen and (max-width: 764px) {
+  .comming_top_wrap {
+      padding: 3rem 0 14rem 0;
+    
+  }
+}

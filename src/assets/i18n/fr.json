@@ -1,9 +1,0 @@
-{
-  "i18n.application.title": "punixSeed",
-  "i18n.application.description": "Modèle de projet réactif pour votre application web d'entreprise. Soutenu par punix et Angular.",
-  "i18n.application.organization.name": "Office fédéral de l'informatique et de la télécommunication OFIT",
-  "i18n.routes.home.title": "Accueil",
-  "i18n.routes.lazy.title": "Lazy",
-  "i18n.routes.home.success": "Votre application punix est opérationnelle ! :)",
-  "i18n.routes.lazy.text": "Ce module est chargé paresseusement, ce qui signifie qu'il ne sera chargé qu'une fois la page accédée."
-}

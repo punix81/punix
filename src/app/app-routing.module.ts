@@ -1,21 +1,23 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { AppComponent } from './app.component';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
-import {HomeComponent} from './home/home.component';
+const routes: Routes = [
+  {
+    path: "",
 
-const appRoutes: Routes = [
-	{path: 'home', component: HomeComponent},
-	{path: 'lazy', loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule)},
-	{path: '', redirectTo: '/home', pathMatch: 'full'}
+   redirectTo:'pages/demos',
+    pathMatch: "full"
+  },
+ 
+  {
+    path: "pages",
+    loadChildren: "./views/pages/pages.module#PagesModule"
+  }
 ];
 
 @NgModule({
-	imports: [
-		RouterModule.forRoot(appRoutes)
-	],
-	exports: [
-		RouterModule
-	]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule { }

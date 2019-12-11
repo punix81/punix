@@ -1,17 +1,13 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {TranslateModule} from '@ngx-translate/core';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatsModule } from './modules/mats.module';
 
 @NgModule({
-	declarations: [],
-	imports: [
-		CommonModule,
-		TranslateModule
-	],
-	exports: [
-		CommonModule,
-		TranslateModule
-	]
+  imports: [
+    CommonModule,
+    MatsModule
+  ],
+  declarations: [],
+  exports: []
 })
-export class SharedModule {
-}
+export class SharedModule { }
