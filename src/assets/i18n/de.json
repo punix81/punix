@@ -1,0 +1,9 @@
+{
+  "i18n.application.title": "punixSeed",
+  "i18n.application.description": "Reaktive Projektvorlage für Ihre Business-Webanwendung. Angetrieben von punix und Angular.",
+  "i18n.application.organization.name": "Bundesamt für Informatik und Telekommunikation",
+  "i18n.routes.home.title": "Startseite",
+  "i18n.routes.lazy.title": "Lazy",
+  "i18n.routes.home.success": "Deine punix App ist fertig und läuft! :)",
+  "i18n.routes.lazy.text": "Dieses Modul ist träge geladen, d.h. es wird erst nach der Aktivierung der Route geladen."
+}

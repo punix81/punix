@@ -1,31 +1,56 @@
-import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import {async, TestBed} from '@angular/core/testing';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {RouterTestingModule} from '@angular/router/testing';
+import {TranslateService} from '@ngx-translate/core';
+import {MockTranslatePipe} from 'tests';
+import {AppComponent} from './app.component';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
-  }));
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
-  });
+	let app: AppComponent;
 
-  it(`should have as title 'punix'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('punix');
-  });
+	const mockNotificationService = {
+		success: jest.fn(),
+	};
 
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to punix!');
-  });
+	beforeEach(async(() => {
+		mockNotificationService.success.mockReturnValue('This is a test');
+
+		const mockTranslateService = {
+			setDefaultLang: jest.fn(),
+			use: jest.fn(),
+			success: jest.fn(),
+			info: jest.fn()
+		};
+
+		TestBed.configureTestingModule({
+			declarations: [
+				AppComponent,
+				MockTranslatePipe
+			],
+			imports: [
+				RouterTestingModule
+			],
+			schemas: [
+				CUSTOM_ELEMENTS_SCHEMA
+			],
+			providers: [
+				{ useValue: mockNotificationService},
+				{provide: TranslateService, useValue: mockTranslateService}
+
+			]
+		});
+		TestBed.compileComponents();
+		const fixture = TestBed.createComponent(AppComponent);
+		app = fixture.debugElement.componentInstance;
+	}));
+
+	it('should create the app', () => {
+		expect(app).toBeTruthy();
+	});
+
+	it('should test success', () => {
+		app.ngAfterViewInit();
+		expect(mockNotificationService.success).toHaveBeenCalled();
+	});
 });

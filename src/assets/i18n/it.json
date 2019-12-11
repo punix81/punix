@@ -1,0 +1,9 @@
+{
+  "i18n.application.title": "punixSeed",
+  "i18n.application.description": "Modello di progetto reattivo per la vostra applicazione web aziendale. Potenziato da punix e Angolare.",
+  "i18n.application.organization.name": "Ufficio federale dell'informatica e della telecomunicazione",
+  "i18n.routes.home.title": "Home",
+  "i18n.routes.lazy.title": "Lazy",
+  "i18n.routes.home.success": "La tua applicazione punix è attiva e funzionante! :)",
+  "i18n.routes.lazy.text": "Questo modulo è caricato pigramente, il che significa che sarà caricato solo quando la rotta è attivata."
+}
