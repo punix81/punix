@@ -43,7 +43,7 @@
     "@angular/flex-layout": "8.0.0-beta.27",
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
-    "ajv": "^6.10.1",
+    "ajv": "^6.12.3",
     "core-js": "^2.6.5",
     "ngx-translate-multi-http-loader": "^3.0.0",
     "rxjs": "^6.5.3",
